@@ -41,12 +41,11 @@
 //     return result
 // }
 
-function getLongestPrefix (array) {
-    // let prefix = ''
+function getLongestPrefix(array) {
     array.sort()
     const minLength = Math.min(array[0].length, array[array.length - 1].length)
     let i = 0
-    while (i<minLength && array[0][i] === array[array.length - 1][i]){
+    while (i < minLength && array[0][i] === array[array.length - 1][i]) {
         i++
     }
 
