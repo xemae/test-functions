@@ -18,11 +18,8 @@ function comparer (obj1, obj2) {
         const bothAreArray = Array.isArray(obj1[prop]) && Array.isArray(obj2[prop]) ;
 
         if (
-            (!bothAreObjects && (obj1[prop] !== obj2[prop])
-            || (bothAreObjects && !comparer(obj1[prop], obj2[prop])))
-
-                || ((!bothAreArray && (obj1[prop] !== obj2[prop]))
-                    || (bothAreArray && !comparer(obj1[prop], obj2[prop]))
+            (!bothAreObjects || (bothAreObjects && !comparer(obj1[prop], obj2[prop])))
+            || (!bothAreArray || (bothAreArray && !comparer(obj1[prop], obj2[prop]))
         )
             )
             return false
@@ -36,17 +33,18 @@ const a = {
     a: 'abc',
     b: 1,
     c: [
+        [[1],[2],[3]],
         {
             a: 'abc1',
             b: 'abc2',
             c: 'abc3',
+            d: [2, 3]
         },
         {
             a: 'abc4',
             b: 'abc5',
             c: 'abc6',
         },
-        [1,2,3]
     ]
 }
 
@@ -54,18 +52,19 @@ const b = {
     a: 'abc',
     b: 1,
     c: [
-        [1,2,3],
+        // [1,2,3]
         {
             a: 'abc1',
             b: 'abc2',
             c: 'abc3',
+            d: [2, 3]
         },
         {
             a: 'abc4',
             b: 'abc5',
-            c: 'abc6',
+            c: 'abc6'
         },
-        // [1,2,3]
+        [[1],[2],[3]]
         ]
 }
 
