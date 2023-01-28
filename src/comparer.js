@@ -52,7 +52,7 @@ const b = {
     a: 'abc',
     b: 1,
     c: [
-        // [1,2,3]
+        [[1],[2],[3]],
         {
             a: 'abc1',
             b: 'abc2',
@@ -63,11 +63,9 @@ const b = {
             a: 'abc4',
             b: 'abc5',
             c: 'abc6'
-        },
-        [[1],[2],[3]]
+        }
         ]
 }
 
 console.log(comparer(a, b))
 
-// console.log(isEqual(a, b));
