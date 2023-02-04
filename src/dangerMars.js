@@ -35,8 +35,7 @@ function dangerMars(maxDanger) {
     answers.push(x1, x2, x3)
     const answer = answers.filter(x => x < maxDepth && x > minDepth)[0]
 
-    return console.log(Fi),
-        console.log('Опасность: ' + maxDanger + ' при глубине кладки ' + answer + ' м')
+    return console.log('Опасность: ' + maxDanger + ' при глубине кладки ' + answer + ' м')
 
 }
 
